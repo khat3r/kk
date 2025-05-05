@@ -1,0 +1,25 @@
+src/
+├── app/
+│   ├── clinic_registration/ 
+│   │   ├── clinic_registration.tsx  (form component)
+│   │   ├── page.tsx  (page that uses the form)
+│   ├── blood_request/  (new folder)
+│   │   ├── emergency_form.tsx  (emergency request form)
+│   │   ├── page.tsx  (page for blood requests)
+│   ├── dashboard/  (new folder)
+│   │   ├── clinic/  (clinic dashboard)
+│   │   │   ├── page.tsx
+│   │   ├── donor/  (donor dashboard)
+│   │   │   ├── page.tsx
+│   ├── api/  (API routes)
+│   │   ├── clinics/
+│   │   │   ├── register/
+│   │   │   │   ├── route.ts  (clinic registration API)
+│   │   ├── blood-requests/
+│   │   │   ├── route.ts  (blood request API)
+│   │   ├── notifications/
+│   │   │   ├── route.ts  (notification API)
+├── components/
+│   ├── notifications/
+│   │   ├── NotificationButton.tsx
+│   │   ├── NotificationList.tsx

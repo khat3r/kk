@@ -1,0 +1,151 @@
+@import "tailwindcss";
+
+/* Color Override System */
+:root {
+  /* Background Colors */
+  --background: #ffffff;
+  --background-gradient-from: #fef2f2; /* red-50 */
+  --background-gradient-to: #ffffff;
+  
+  --primary: #cb1f16; /* red-800 */
+  --primary-hover: #b63730; /* red-900 */
+  --primary-light: #fee2e2; /* red-100 */
+  --primary-lightest: #fef2f2; /* red-50 */
+  
+  /* Text Colors */
+  --foreground: #171717; /* gray-900 */
+  --foreground-muted: #4b5563; /* gray-600 */
+  --foreground-subtle: #9ca3af; /* gray-400 */
+  
+  /* UI Element Colors */
+  --border-color: #e5e7eb; /* gray-200 */
+  --input-background: #ffffff;
+  --input-border: #d1d5db; /* gray-300 */
+  
+  /* Status Colors */
+  --success: #10b981; /* green-500 */
+  --warning: #f59e0b; /* amber-500 */
+  --error: #ef4444; /* red-500 */
+  --info: #3b82f6; /* blue-500 */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --background-gradient-from: #18181b; /* zinc-900 */
+    --background-gradient-to: #09090b; /* zinc-950 */
+    --foreground: #ededed;
+    --foreground-muted: #a1a1aa; /* zinc-400 */
+    --foreground-subtle: #52525b; /* zinc-600 */
+    --border-color: #27272a; /* zinc-800 */
+    --input-background: #18181b; /* zinc-900 */
+    --input-border: #3f3f46; /* zinc-700 */
+  }
+}
+
+/* Override Tailwind Red Colors */
+.text-red-50, .hover\:text-red-50:hover { color: var(--primary-lightest) !important; }
+.text-red-100, .hover\:text-red-100:hover { color: var(--primary-light) !important; }
+.text-red-600, .hover\:text-red-600:hover { color: var(--primary) !important; }
+.text-red-700, .hover\:text-red-700:hover { color: var(--primary) !important; }
+.text-red-800, .hover\:text-red-800:hover { color: var(--primary) !important; }
+.text-red-900, .hover\:text-red-900:hover { color: var(--primary-hover) !important; }
+
+.bg-red-50, .hover\:bg-red-50:hover { background-color: var(--primary-lightest) !important; }
+.bg-red-100, .hover\:bg-red-100:hover { background-color: var(--primary-light) !important; }
+.bg-red-600, .hover\:bg-red-600:hover { background-color: var(--primary) !important; }
+.bg-red-700, .hover\:bg-red-700:hover { background-color: var(--primary) !important; }
+.bg-red-800, .hover\:bg-red-800:hover { background-color: var(--primary) !important; }
+.bg-red-900, .hover\:bg-red-900:hover { background-color: var(--primary-hover) !important; }
+
+.border-red-50, .hover\:border-red-50:hover { border-color: var(--primary-lightest) !important; }
+.border-red-100, .hover\:border-red-100:hover { border-color: var(--primary-light) !important; }
+.border-red-600, .hover\:border-red-600:hover { border-color: var(--primary) !important; }
+.border-red-700, .hover\:border-red-700:hover { border-color: var(--primary) !important; }
+.border-red-800, .hover\:border-red-800:hover { border-color: var(--primary) !important; }
+.border-red-900, .hover\:border-red-900:hover { border-color: var(--primary-hover) !important; }
+
+/* Focus ring colors */
+.focus\:ring-red-600:focus, .focus\:ring-red-700:focus, 
+.focus\:ring-red-800:focus, .focus\:ring-red-900:focus {
+  --tw-ring-color: var(--primary) !important;
+}
+
+/* Utility classes that use custom properties */
+.bg-gradient-brand {
+  background: linear-gradient(to bottom, var(--background-gradient-from), var(--background-gradient-to));
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+.hover\:bg-primary-hover:hover {
+  background-color: var(--primary-hover) !important;
+}
+
+.bg-primary-light {
+  background-color: var(--primary-light);
+}
+
+/* Basic styling */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, Arial, Helvetica, sans-serif);
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  border-radius: 9999px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-lightest);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
